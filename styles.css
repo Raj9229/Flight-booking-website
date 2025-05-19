@@ -598,6 +598,58 @@ footer {
   text-align: center;
 }
 
+.login__container {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--extra-light);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.login__form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form__group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.login__form__group input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border: 1px solid var(--text-light);
+  border-radius: 5px;
+}
+
+.login__form__group input::placeholder {
+  color: var(--text-light);
+}
+
+.login__form .btn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.login__form .btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
 @media (width > 540px) {
   .destination__grid {
     grid-template-columns: repeat(2, 1fr);

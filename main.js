@@ -74,3 +74,31 @@ const swiper = new Swiper(".swiper", {
   spaceBetween: 20,
   loop: true,
 });
+
+document.querySelector('.login__form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const email = document.querySelector('#email').value;
+  const password = document.querySelector('#password').value;
+  
+  try {
+    const response = await fetch('https://your-backend-url.com/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      alert('Login successful!');
+      // Handle successful login, e.g., redirect to another page
+    } else {
+      alert('Login failed. Please check your credentials.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again later.');
+  }
+});
